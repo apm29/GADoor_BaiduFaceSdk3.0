@@ -1,0 +1,2 @@
+include ':app' , ':facelibrary' ,':data',':serial',':tpsutils',':qrcode', ':rs485reader'
+rootProject.name='GADoor_BaiduFaceSdk3.0'

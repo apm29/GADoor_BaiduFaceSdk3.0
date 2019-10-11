@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:hardwareAccelerated="true"
+    tools:context="com.apm.anxinju.main.activity.PreviewActivity">
+
+    <com.apm.anxinju.main.camera.AutoTexturePreviewView
+        android:id="@+id/autoTexturePreview"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="0dp"
+        />
+
+    <TextureView
+        android:id="@+id/textureView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="@id/autoTexturePreview"
+        app:layout_constraintEnd_toEndOf="@id/autoTexturePreview"
+        app:layout_constraintTop_toTopOf="@id/autoTexturePreview"
+        app:layout_constraintBottom_toBottomOf="@id/autoTexturePreview"
+        />
+
+    <TextView
+        android:id="@+id/mDetectText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textureView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textureView" />
+
+    <ImageView
+        android:id="@+id/mFaceDetectImageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textureView" />
+    <LinearLayout
+        android:id="@+id/registerLL"
+        android:visibility="gone"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/mFaceDetectImageView"
+        app:layout_constraintStart_toStartOf="@id/mFaceDetectImageView"
+        app:layout_constraintEnd_toEndOf="@id/mFaceDetectImageView"
+        android:layout_width="wrap_content"
+        android:background="@color/white"
+        android:padding="3dp"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/registerIv"
+            android:scaleType="centerCrop"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+        <TextView
+            android:textColor="@color/black"
+            android:id="@+id/registerTv"
+            android:textSize="40sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <Button
+        android:text="扫描二维码"
+        android:id="@+id/qrCode"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        android:padding="30dp"
+        android:background="@drawable/bt_set_round"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <include
+        android:id="@+id/layout_keyboard"
+        layout="@layout/layout_keyboard"
+        android:layout_margin="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/textureView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textureView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
